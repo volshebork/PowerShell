@@ -1,11 +1,5 @@
 <# This script will toggle between the Windows 11 context menu and the Classic context menu. #>
 
-# Check for admin privileges
-if (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
-    Write-Warning "This script requires Administrator privileges. Please run as Administrator."
-    exit
-}
-
 $regPath = "HKCU:\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}"
 
 # Check if classic menu is currently enabled
